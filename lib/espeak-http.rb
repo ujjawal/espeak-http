@@ -7,6 +7,8 @@ include ESpeak
 
 get '/tts' do
   filename = "tmp/#{Digest::SHA1.hexdigest(params.to_s)}.mp3"
+  params['speed'] = 140
+  params['pitch'] = 10
   espeak(filename, params) # unless filename exists
   [200, {'Content-type' => 'audio/mpeg'}, File.read(filename)]
 end

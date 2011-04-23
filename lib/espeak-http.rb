@@ -4,5 +4,5 @@ get '/tts' do
   params['speed'] = 140
   params['pitch'] = 5
   params['amplitude'] = 50
-  [200, {'Content-type' => 'audio/mpeg'}, `espeak #{params[:text]} --stdout -v#{params[:voice]} -p#{params[:pitch]} -s#{params[:speed]} -a#{params[:amplitude]}  | lame -V8 - `]
+  [200, {'Content-type' => 'audio/mpeg'}, `espeak '#{params[:text]}' --stdout -v#{params[:voice]} -p#{params[:pitch]} -s#{params[:speed]} -a#{params[:amplitude]} | lame -t --ignore-tag-errors -`]
 end

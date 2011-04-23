@@ -55,6 +55,6 @@ private
   end
 
   def lame_command(filename)
-    "lame -V2 - #{filename}"
+    "lame -V8 - #{filename}"
   end
 end

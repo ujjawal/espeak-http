@@ -12,7 +12,6 @@ else
     then
         thin -s 4 restart -O -p 5000
     fi
-    echo 'thin'
 fi
 
 
